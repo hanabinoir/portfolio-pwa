@@ -1,10 +1,11 @@
 import React from "react"
+import { Card } from "react-bootstrap"
 
 export default function Section(id, title, content) {
   return(
-    <div key={id} id={id}>
-      <h1>{title}</h1>
-      <p>{content}</p>
-    </div>
+    <Card key={id} id={id}>
+      <Card.Header>{title}</Card.Header>
+      {content}
+    </Card>
   )
 }
