@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import loremIpsum from '../../assets/LoremIpsum';
+import { FaGithub, FaLinkedin, FaTwitter, FaFileExcel, FaFileWord, FaFilePdf } from 'react-icons/fa'
+import { IoDocumentOutline } from 'react-icons/io5'
+import { TiContacts, TiMail} from 'react-icons/ti'
 import imgHolder from '../../assets/favicon.png';
 
 class Intro extends Component {
@@ -11,6 +13,17 @@ class Intro extends Component {
         <Card.Body>
           <Card.Img src={imgHolder} />
           <Card.Title>Vincent Shen</Card.Title>
+          <p className="profile-icons">
+            <FaGithub/>
+            <FaLinkedin/>
+            <FaTwitter/>
+          </p>
+          <p className="contact-icons">
+            <TiMail/>crigshn@gmail.com<br/>
+            <IoDocumentOutline/>Resume: <FaFileExcel/>/<FaFilePdf/><br/>
+            <IoDocumentOutline/>CV: <FaFileWord/>/<FaFilePdf/><br/>
+            <TiContacts/>Contact Me
+          </p>
         </Card.Body>
       </Col>
     )
