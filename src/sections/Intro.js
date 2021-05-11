@@ -1,11 +1,48 @@
 import React, { Component } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
+import { confirmAlert } from 'react-confirm-alert';
 import { FaGithub, FaLinkedin, FaTwitter, FaFileExcel, FaFileWord, FaFilePdf } from 'react-icons/fa'
 import { IoDocumentOutline } from 'react-icons/io5'
 import { TiContacts, TiMail} from 'react-icons/ti'
+import { Linking } from 'react-native';
+import validator from 'validator';
 import imgHolder from '../../assets/favicon.png';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Intro extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.email = "crigshn@gmail.com"
+    this.profile = {
+      linkedin: "https://www.linkedin.com/in/hanabinoir/", 
+      github: "https://github.com/hanabinoir", 
+      twitter: "https://twitter.com/HanabiNoir"
+    }
+  }
+
+  openExternal = (url) => {
+    confirmAlert({
+      title: "Warning: Opening External Link",
+      message: url,
+      buttons: [
+        {
+          label: "Send",
+          onClick: () => {
+            if (validator.isEmail(url)) {
+              url = `mailto:${url}`
+            }
+            Linking.openURL(url)
+          }
+        }, 
+        {
+          label: "Cancel",
+        }
+      ],
+      closeOnEscape: true,
+      closeOnClickOutside: true,
+    })
+  }
 
   render() {
     const colImg = (
@@ -14,12 +51,12 @@ class Intro extends Component {
           <Card.Img src={imgHolder} />
           <Card.Title>Vincent Shen</Card.Title>
           <p className="profile-icons">
-            <FaGithub/>
-            <FaLinkedin/>
-            <FaTwitter/>
+          <FaGithub href={this.profile.github} onClick={() => {this.openExternal(this.profile.github)}}/>
+          <FaLinkedin href={this.profile.linkedin} onClick={() => {this.openExternal(this.profile.linkedin)}}/>
+          <FaTwitter href={this.profile.twitter} onClick={() => {this.openExternal(this.profile.twitter)}}/>
           </p>
           <p className="contact-icons">
-            <TiMail/>crigshn@gmail.com<br/>
+            <TiMail/><a href="#" onClick={() => { this.openExternal(this.email) }}>{this.email}</a><br/>
             <IoDocumentOutline/>Resume: <FaFileExcel/>/<FaFilePdf/><br/>
             <IoDocumentOutline/>CV: <FaFileWord/>/<FaFilePdf/><br/>
             <TiContacts/>Contact Me

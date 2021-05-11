@@ -20,6 +20,12 @@
   height: 24px;
   width: 24px;
   margin-right: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-icons > svg:hover {
+  cursor: pointer;
 }
 
 .contact-icons > svg {
