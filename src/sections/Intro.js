@@ -10,34 +10,26 @@ import imgHolder from '../../assets/favicon.png';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Intro extends Component {
-  constructor(props) {
-    super(props)
-    
-    this.email = "crigshn@gmail.com"
-    this.profile = {
-      linkedin: "https://www.linkedin.com/in/hanabinoir/", 
-      github: "https://github.com/hanabinoir", 
-      twitter: "https://twitter.com/HanabiNoir"
-    }
-  }
-
   openExternal = (url) => {
+    const isEmailAddr = validator.isEmail(url)
+    const lblOK = isEmailAddr ? "Send" : "Open"
+
     confirmAlert({
       title: "Warning: Opening External Link",
       message: url,
       buttons: [
         {
-          label: "Send",
+          label: "Cancel",
+        },
+        {
+          label: lblOK,
           onClick: () => {
-            if (validator.isEmail(url)) {
+            if (isEmailAddr) {
               url = `mailto:${url}`
             }
             Linking.openURL(url)
           }
         }, 
-        {
-          label: "Cancel",
-        }
       ],
       closeOnEscape: true,
       closeOnClickOutside: true,
@@ -45,22 +37,28 @@ class Intro extends Component {
   }
 
   render() {
+    const email = "crigshn@gmail.com"
+    const profile = {
+      linkedin: "https://www.linkedin.com/in/hanabinoir/", 
+      github: "https://github.com/hanabinoir", 
+      twitter: "https://twitter.com/HanabiNoir"
+    }
     const colImg = (
       <Col className="col-auto">
         <Card.Body>
           <Card.Img src={imgHolder} />
           <Card.Title>Vincent Shen</Card.Title>
-          <p className="profile-icons">
-          <FaGithub href={this.profile.github} onClick={() => {this.openExternal(this.profile.github)}}/>
-          <FaLinkedin href={this.profile.linkedin} onClick={() => {this.openExternal(this.profile.linkedin)}}/>
-          <FaTwitter href={this.profile.twitter} onClick={() => {this.openExternal(this.profile.twitter)}}/>
-          </p>
-          <p className="contact-icons">
-            <TiMail/><a href="#" onClick={() => { this.openExternal(this.email) }}>{this.email}</a><br/>
+          <div className="profile-icons">
+            <FaGithub href={profile.github} onClick={() => {this.openExternal(this.profile.github)}}/>
+            <FaLinkedin href={profile.linkedin} onClick={() => {this.openExternal(this.profile.linkedin)}}/>
+            <FaTwitter href={profile.twitter} onClick={() => {this.openExternal(this.profile.twitter)}}/>
+          </div>
+          <div className="contact-icons">
+            <TiMail/><a href="#" onClick={() => { this.openExternal(email) }}>{email}</a><br/>
             <IoDocumentOutline/>Resume: <FaFileExcel/>/<FaFilePdf/><br/>
             <IoDocumentOutline/>CV: <FaFileWord/>/<FaFilePdf/><br/>
             <TiContacts/>Contact Me
-          </p>
+          </div>
         </Card.Body>
       </Col>
     )
@@ -77,21 +75,21 @@ class Intro extends Component {
             </Row>
             <Row>
               <Col xs={2}><b>最寄駅</b></Col>
-              <Col>小田急小田原線　百合ヶ丘　歩き１０分</Col>
+              <Col>小田急小田原線　百合ヶ丘　歩き10分</Col>
             </Row>
             <Row>
               <Col xs={2}><b>生年月日</b></Col>
-              <Col>1991年10月19日　平成３年</Col>
+              <Col>1991年10月19日　平成3年</Col>
             </Row>
             <Row>
               <Col xs={2}><b>外国人身分</b></Col>
-              <Col>国籍：中国　
-              在留資格：技術・人文知識・国際業務　
+              <Col>国籍：中国<br/>
+              在留資格：技術・人文知識・国際業務<br/>
               期限：2021年9月15日</Col>
             </Row>
             <Row>
               <Col xs={2}><b>経験年数</b></Col>
-              <Col>２年以上</Col>
+              <Col>2年以上</Col>
             </Row>
             <Row>
               <Col xs={2}><b>個人紹介</b></Col>

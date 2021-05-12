@@ -4,24 +4,34 @@
 }
 
 .intro-container > .row {
-  min-height: 36px;
+  min-height: 32px;
+  margin-top: 3px;
+  margin-bottom: 3px;
 }
 
 .title-row {
   height: 54px;
 }
 
+.card {
+  margin-bottom: 40px;
+}
+
 .card-title {
   margin-top: 15px;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+.profile-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .profile-icons > svg {
   height: 24px;
   width: 24px;
-  margin-right: 5px;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .profile-icons > svg:hover {

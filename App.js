@@ -7,13 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Intro from './src/sections/Intro';
 import Holder from './src/sections/Holder';
+import Tech from './src/sections/Tech';
 
 export default function App() {
   const section = (item) => {
     switch(item) {
       case NavItem.intro:
         return(<Intro/>)
-      case NavItem.skills:
+      case NavItem.techs:
+        return(<Tech/>)
+      case NavItem.langs:
         return(<Holder/>)
       case NavItem.projects:
         return(<Holder/>)
