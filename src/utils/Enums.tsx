@@ -10,8 +10,7 @@ export enum TechType {
   backend = "Backend",
   frontend = "Frontend",
   os = "OS",
-  ide = "IDE",
-  other = "Other Tools"
+  tools = "Tools"
 }
 
 export default class Enums {
