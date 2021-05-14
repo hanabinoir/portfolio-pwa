@@ -6,7 +6,6 @@ import { IoDocumentOutline } from 'react-icons/io5'
 import { TiContacts, TiMail} from 'react-icons/ti'
 import { Linking } from 'react-native';
 import validator from 'validator';
-import imgHolder from '../../assets/favicon.png';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Intro extends Component {
@@ -46,7 +45,7 @@ class Intro extends Component {
     const colImg = (
       <Col className="col-auto">
         <Card.Body>
-          <Card.Img src={imgHolder} />
+          <Card.Img src={require('../../assets/avatar_160x160.jpg')} />
           <Card.Title>Vincent Shen</Card.Title>
           <div className="profile-icons">
             <FaGithub href={profile.github} onClick={() => {this.openExternal(this.profile.github)}}/>
