@@ -1,0 +1,23 @@
+{
+  "files": {
+    "app.js": "/hanabinoir/portfolio-web.git/static/js/app.cc2ecbd2.chunk.js",
+    "app.js.map": "/hanabinoir/portfolio-web.git/static/js/app.cc2ecbd2.chunk.js.map",
+    "runtime~app.js": "/hanabinoir/portfolio-web.git/static/js/runtime~app.df438b33.js",
+    "runtime~app.js.map": "/hanabinoir/portfolio-web.git/static/js/runtime~app.df438b33.js.map",
+    "static/js/2.ccedb19a.chunk.js": "/hanabinoir/portfolio-web.git/static/js/2.ccedb19a.chunk.js",
+    "static/js/2.ccedb19a.chunk.js.map": "/hanabinoir/portfolio-web.git/static/js/2.ccedb19a.chunk.js.map",
+    "favicon-16.png": "/hanabinoir/portfolio-web.git/favicon-16.png",
+    "favicon-32.png": "/hanabinoir/portfolio-web.git/favicon-32.png",
+    "favicon.ico": "/hanabinoir/portfolio-web.git/favicon.ico",
+    "index.html": "/hanabinoir/portfolio-web.git/index.html",
+    "manifest.json": "/hanabinoir/portfolio-web.git/manifest.json",
+    "serve.json": "/hanabinoir/portfolio-web.git/serve.json",
+    "static/js/2.ccedb19a.chunk.js.LICENSE.txt": "/hanabinoir/portfolio-web.git/static/js/2.ccedb19a.chunk.js.LICENSE.txt",
+    "static/media/favicon.png": "/hanabinoir/portfolio-web.git/static/media/favicon.fa4783d1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime~app.df438b33.js",
+    "static/js/2.ccedb19a.chunk.js",
+    "static/js/app.cc2ecbd2.chunk.js"
+  ]
+}
