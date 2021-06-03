@@ -55,8 +55,9 @@ class Intro extends Component {
           </div>
           <div className="contact-icons">
             <TiMail/><a href="#" onClick={() => { this.openExternal(email) }}>{email}</a><br/>
-            <IoDocumentOutline/>Resume: <FaFileExcel/>/<FaFilePdf/><br/>
             <IoDocumentOutline/>CV: <FaFileWord/>/<FaFilePdf/><br/>
+            <IoDocumentOutline/>履歴書: <FaFileExcel/>/<FaFilePdf/><br/>
+            <IoDocumentOutline/>職務経歴書: <FaFileWord/>/<FaFilePdf/><br/>
             <TiContacts/>Contact Me
           </div>
         </Card.Body>
