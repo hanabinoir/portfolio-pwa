@@ -8,6 +8,8 @@ import './App.css';
 import Intro from './src/sections/Intro';
 import Holder from './src/sections/Holder';
 import Tech from './src/sections/Tech';
+import PR from './src/sections/pr';
+import Projects from './src/sections/Projects';
 
 export default function App() {
   const section = (item) => {
@@ -16,10 +18,10 @@ export default function App() {
         return(<Intro/>)
       case NavItem.techs:
         return(<Tech/>)
-      case NavItem.langs:
-        return(<Holder/>)
+      case NavItem.pr:
+        return(<PR/>)
       case NavItem.projects:
-        return(<Holder/>)
+        return(<Projects/>)
     }
   }
   const sections = []

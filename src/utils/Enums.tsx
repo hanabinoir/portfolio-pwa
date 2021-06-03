@@ -1,7 +1,7 @@
 export enum NavItem {
   intro = "Introduction",
   techs = "Technologies",
-  langs = "Languages",
+  pr = "PR",
   projects = "Projects"
 }
 

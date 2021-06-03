@@ -46,4 +46,16 @@
 
 .badge {
   color: black;
+  border: none;
+  margin-right: 5px;
+}
+
+.tech-container {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.tech-row {
+  align-items: baseline;
+  padding: 3px 0px;
 }

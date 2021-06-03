@@ -22,7 +22,7 @@ class Tech extends Component {
       techList.forEach(items => {
         const badges = items.map(item => {
           const k = item.split(' ').map(w => w.toLowerCase()).join('-')
-          return(<Badge key={k} variant="light">{item}</Badge>)
+          return(<Badge key={k} variant="light" as="button">{item}</Badge>)
         })
         divs.push(<div key={"stack-"+stackIdx}>{badges}</div>)
         stackIdx++
@@ -37,29 +37,34 @@ class Tech extends Component {
       switch(v) {
         case TechType.langs:
           techList = [languages]
+          break
         case TechType.backend:
           techList = [backend, db, servers]
+          break
         case TechType.frontend:
           techList = [frontend, mobile]
+          break
         case TechType.os:
           techList = [os]
+          break
         case TechType.tools:
           techList = [ides, editors, other]
+          break
         default:
           break
       }
       const techDivs = createDivs(techList)
       const rowKey = v.split(' ').map(w => w.toLowerCase()).join('-')
       rows.push(
-        <Row key={rowKey}>
-          <Col xs={3}>{v}</Col>
+        <Row key={rowKey} className="tech-row">
+          <Col xs={3}><Card.Subtitle>{v}</Card.Subtitle></Col>
           <Col>{techDivs}</Col>
         </Row>
       )
     }
     
     return (
-      <Container>
+      <Container className="tech-container">
         {rows}
       </Container>
     )
