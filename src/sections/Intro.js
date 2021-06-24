@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import { confirmAlert } from 'react-confirm-alert';
 import { FaGithub, FaLinkedin, FaTwitter, FaFileExcel, FaFileWord, FaFilePdf } from 'react-icons/fa'
 import { IoDocumentOutline } from 'react-icons/io5'
@@ -7,8 +7,40 @@ import { TiContacts, TiMail} from 'react-icons/ti'
 import { Linking } from 'react-native';
 import validator from 'validator';
 import 'react-confirm-alert/src/react-confirm-alert.css';
+import Http from '../components/Http';
+import { HttpMethod } from '../utils/Enums';
 
 class Intro extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      data: [],
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    let request = {
+      method: HttpMethod.get, 
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true
+      },
+    }
+    Http(`basic`, request)
+    .then((res) => {
+      if (res !== undefined) {
+        this.setState({ data: res })
+      }
+    })
+    .finally(() => {
+      this.setState({ isLoading: false })
+    })
+  }
+
   openExternal = (url) => {
     const isEmailAddr = validator.isEmail(url)
     const lblOK = isEmailAddr ? "Send" : "Open"
@@ -109,6 +141,9 @@ class Intro extends Component {
     return (
       <Container>
         <Row>
+        <Alert style={{ display: this.state.data['is_ok'] ? 'none' : 'block'}}
+        variant='warning'>{this.state.data['status']}: 
+        {this.state.data['msg']}</Alert>
           {colImg}
           {colIntro}
         </Row>
