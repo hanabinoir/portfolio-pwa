@@ -39,8 +39,8 @@ class PR extends Component {
     })
 
     const interests = ["musics", "novels", "fictions", "movies", "videdo games", 
-    "linguistics", "geeking"].map(i => {
-      return(<Badge variant="light" as="button">{i}</Badge>)
+    "linguistics", "geeking"].map((b, i) => {
+      return(<Badge key={`badge-${i}`} variant="light" as="button">{b}</Badge>)
     })
 
     const colLangs = ColumnView("Languages", langRows)

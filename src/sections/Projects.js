@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { confirmAlert } from 'react-confirm-alert';
+import { Card, Container, Row } from 'react-bootstrap';
 import ColumnView from '../components/ColumnView';
 import { ScrollView } from 'react-native';
 
 class Projects extends Component {
 
-  viewApp = () => {
+  viewApp = (url) => {
     confirmAlert({
       title: "Warning: Opening External Link",
       message: url,
@@ -14,7 +15,7 @@ class Projects extends Component {
           label: "Cancel",
         },
         {
-          label: lblOK,
+          label: 'Open',
           onClick: () => {
             Linking.openURL(url)
           }
@@ -41,10 +42,10 @@ class Projects extends Component {
     ]
 
     const scoller = (projs) => {
-      const items = projs.map(proj => {
+      const items = projs.map((proj, idx) => {
         return(
-          <div>
-            <Card.Subtitle onclick={proj.url}>{proj.name}</Card.Subtitle>
+          <div key={`project-${idx}`}>
+            <Card.Subtitle onClick={()=>this.viewApp(proj.url)}>{proj.name}</Card.Subtitle>
             <Card.Body>
               <span>{proj.company}</span>
               <span>{proj.period}</span>

@@ -13,6 +13,13 @@ export enum TechType {
   tools = "Tools"
 }
 
+export enum HttpMethod {
+  get = "GET", 
+  post = "POST", 
+  put = "PUT", 
+  delete = "DELETE"
+}
+
 export default class Enums {
 
   static enumKeys<E>(e: E): (keyof E)[] {
