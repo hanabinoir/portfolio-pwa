@@ -1,24 +1,24 @@
 {
   "files": {
-    "app.js": "/portfolio-web/static/js/app.4b25f3bd.chunk.js",
-    "app.js.map": "/portfolio-web/static/js/app.4b25f3bd.chunk.js.map",
+    "app.js": "/portfolio-web/static/js/app.3f540364.chunk.js",
+    "app.js.map": "/portfolio-web/static/js/app.3f540364.chunk.js.map",
     "runtime~app.js": "/portfolio-web/static/js/runtime~app.2a830c56.js",
     "runtime~app.js.map": "/portfolio-web/static/js/runtime~app.2a830c56.js.map",
-    "static/js/2.2b2247bb.chunk.js": "/portfolio-web/static/js/2.2b2247bb.chunk.js",
-    "static/js/2.2b2247bb.chunk.js.map": "/portfolio-web/static/js/2.2b2247bb.chunk.js.map",
+    "static/js/2.75352e09.chunk.js": "/portfolio-web/static/js/2.75352e09.chunk.js",
+    "static/js/2.75352e09.chunk.js.map": "/portfolio-web/static/js/2.75352e09.chunk.js.map",
     "favicon-16.png": "/portfolio-web/favicon-16.png",
     "favicon-32.png": "/portfolio-web/favicon-32.png",
     "favicon.ico": "/portfolio-web/favicon.ico",
     "index.html": "/portfolio-web/index.html",
     "manifest.json": "/portfolio-web/manifest.json",
     "serve.json": "/portfolio-web/serve.json",
-    "static/js/2.2b2247bb.chunk.js.LICENSE.txt": "/portfolio-web/static/js/2.2b2247bb.chunk.js.LICENSE.txt",
+    "static/js/2.75352e09.chunk.js.LICENSE.txt": "/portfolio-web/static/js/2.75352e09.chunk.js.LICENSE.txt",
     "static/media/avatar_160x160.jpg": "/portfolio-web/static/media/avatar_160x160.061b615c.jpg",
     "static/media/favicon.png": "/portfolio-web/static/media/favicon.fa4783d1.png"
   },
   "entrypoints": [
     "static/js/runtime~app.2a830c56.js",
-    "static/js/2.2b2247bb.chunk.js",
-    "static/js/app.4b25f3bd.chunk.js"
+    "static/js/2.75352e09.chunk.js",
+    "static/js/app.3f540364.chunk.js"
   ]
 }
