@@ -1,9 +1,9 @@
 export default function Http(action, request) {
 
   let url = `https://hanabi-tube.herokuapp.com/${action}`
-  let testUrl = 'https://randomuser.me/api/'
+  // let localUrl = `http://127.0.0.1:5000/${action}`
 
-  return fetch(url, request)
+  return fetch(url, { request })
   .then((response) => {
     var res
 
@@ -13,7 +13,7 @@ export default function Http(action, request) {
       res = {
         "status": response.status,
         "msg": response.statusText,
-        'is_ok': response.ok
+        'is_error': !response.ok
       }
       console.log(res)
     }
