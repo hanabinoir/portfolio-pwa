@@ -59,3 +59,17 @@
   align-items: baseline;
   padding: 3px 0px;
 }
+
+.furigana {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 15px;
+  margin-bottom: -15px;
+}
+
+.sino-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

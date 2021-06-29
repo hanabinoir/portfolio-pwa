@@ -13,7 +13,7 @@ export function Wareki(date, lang) {
     const e = eras[index];
     if (date >= e.dateStarted) {
       const year = date.getYear() - e.dateStarted.getYear() + 1
-      return lang == 'en' 
+      return lang.includes('en') 
         ? `${e.nameEN} ${year}` 
         : `${e.name}${year}年`
     }
@@ -48,7 +48,7 @@ export function Experience(months, lang) {
   const remainder = months % 12
 
   let lblYear, lblMonth, res
-  if (lang == 'en') {
+  if (lang.includes('en')) {
     lblYear = years < 1 ? 'year' : 'years'
     lblMonth = months < 1 ? 'month' : 'months'
 
