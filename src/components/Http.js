@@ -5,7 +5,7 @@ export default function Http(action, request) {
   let url = `https://hanabi-tube.herokuapp.com/${action}`
   let localUrl = `http://127.0.0.1:5000/${action}`
 
-  return fetch(localUrl, { request })
+  return fetch(url, { request })
   .then((response) => {
     var res
 

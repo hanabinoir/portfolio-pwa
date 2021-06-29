@@ -63,14 +63,13 @@ class Intro extends Component {
     }
     return (
       <Container>
-        { isLoading ? <ActivityIndicator/> :
         <Row>
           <Alert style={{ display: data['is_error'] ? 'block' : 'none' }}
               variant='warning'>{data['status']}: 
               {data['msg']}</Alert>
-            {colLeft}
+            { isLoading ? <ActivityIndicator/> : colLeft }
             <Profile/>
-        </Row>}
+        </Row>
       </Container>
     )
   }
