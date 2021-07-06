@@ -7,25 +7,21 @@ import Http, { MakeRequest } from "../../components/Http";
 import { Experience, LocalTime, Wareki } from "../../utils/Calendar";
 import { GetLanguage } from '../../utils/i18n';
 
-export default function Profile() {
+export default function Profile(lng) {
 
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
-  const [lang, setLang] = useState('')
+  const lang = lng ?? GetLanguage()
 
   useEffect(() => {
     const request = MakeRequest()
-    const lang = GetLanguage()
     Http(`profile?lang=${encodeURIComponent(lang)}`, request)
     .then((res) => {
       if (res !== undefined) {
         setData(res)
       }
     })
-    .finally(() => {
-      setLoading(false)
-      setLang(lang)
-    })
+    .finally(() => setLoading(false))
   }, [])
 
   let mainContent

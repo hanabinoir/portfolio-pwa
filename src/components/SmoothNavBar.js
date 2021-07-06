@@ -3,16 +3,21 @@ import { Component } from "react";
 import { Button, Nav, Navbar } from "react-bootstrap";
 import Enums, { NavItem } from "../utils/Enums";
 import i18n, { GetLanguage } from '../utils/i18n';
+import BaseComponent from './BaseComponent';
 
-class SmoothNavBar extends Component {
-
-    switchLanguage = (e) => {
-        e.preventDefault()
-        window.location.reload()
-        const current = GetLanguage()
-        const target = current == 'en' ? 'jp' : 'en'
-        i18n.changeLanguage(target)
+class SmoothNavBar extends BaseComponent {
+    constructor(props) {
+        super(props)
     }
+
+    // switchLanguage = (e) => {
+    //     e.preventDefault()
+    //     window.location.reload()
+    //     const current = GetLanguage()
+    //     const target = current == 'en' ? 'jp' : 'en'
+    //     i18n.changeLanguage(target)
+    //     super.setState({lang: target})
+    // }
 
     render() {
         const navItems = []

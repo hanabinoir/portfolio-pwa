@@ -1,29 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import { ActivityIndicator } from 'react-native';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Http, { MakeRequest } from '../../components/Http';
 import '../../utils/i18n';
-import { GetLanguage } from '../../utils/i18n';
 import Profile from './Profile';
 import Contact from './Contact';
+import BaseComponent from '../../components/BaseComponent';
 
-class Intro extends Component {
+class Intro extends BaseComponent {
   constructor(props) {
     super(props);
-
-    this.state = {
-      data: [],
-      isLoading: true, 
-      lang: '',
-    };
   }
 
   componentDidMount() {
-
-    const lang = GetLanguage()
     const request = MakeRequest()
-    Http(`basic?lang=${encodeURIComponent(lang)}`, request)
+    Http(`basic?lang=${encodeURIComponent(this.state.lang)}`, request)
     .then((res) => {
       if (res !== undefined) {
         this.setState({ data: res })
@@ -32,7 +24,7 @@ class Intro extends Component {
     .finally(() => {
       this.setState({ 
         isLoading: false, 
-        lang: lang 
+        lang: this.state.lang 
       })
     })
   }
