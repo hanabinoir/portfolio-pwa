@@ -18,6 +18,7 @@ class Intro extends BaseComponent {
   }
 
   fetchContent() {
+    this.setState({ isLoading: true })
     const request = MakeRequest()
     Http(`basic?lang=${encodeURIComponent(this.props.lang)}`, request)
     .then((res) => {

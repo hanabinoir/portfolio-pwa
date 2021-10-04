@@ -11,6 +11,7 @@ export default function Profile({ lang }) {
   const [data, setData] = useState([])
 
   useEffect(() => {
+    setLoading(true)
     const request = MakeRequest()
     Http(`profile?lang=${encodeURIComponent(lang)}`, request)
     .then((res) => {
