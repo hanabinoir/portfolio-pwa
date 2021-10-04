@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Section from './src/components/Section';
 import SmoothNavBar from './src/components/SmoothNavBar';
@@ -9,12 +9,21 @@ import Intro from './src/sections/intro/Intro';
 import Tech from './src/sections/Tech';
 import PR from './src/sections/pr';
 import Projects from './src/sections/Projects';
+import i18n, { GetLanguage } from './src/utils/i18n';
 
 export default function App() {
+  const [lang, setLang] = useState(GetLanguage())
+
+  const toggleLang = () => {
+    const newLang = lang === 'jp' ? 'en' : 'jp'
+    i18n.changeLanguage(newLang)
+    setLang(newLang)
+  }
+
   const section = (item) => {
     switch(item) {
       case NavItem.intro:
-        return(<Intro/>)
+        return(<Intro lang={lang} />)
       case NavItem.techs:
         return(<Tech/>)
       case NavItem.pr:
@@ -33,7 +42,7 @@ export default function App() {
 
   return (
     <Container>
-      <SmoothNavBar />
+      <SmoothNavBar onLangChange={toggleLang} />
       {sections}
     </Container>
   );
