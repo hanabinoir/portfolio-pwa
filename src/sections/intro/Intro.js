@@ -9,6 +9,15 @@ import BaseComponent from '../../components/BaseComponent';
 
 class Intro extends BaseComponent {
   componentDidMount() {
+    this.fetchContent()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.lang === this.props.lang) return
+    this.fetchContent()
+  }
+
+  fetchContent() {
     const request = MakeRequest()
     Http(`basic?lang=${encodeURIComponent(this.props.lang)}`, request)
     .then((res) => {

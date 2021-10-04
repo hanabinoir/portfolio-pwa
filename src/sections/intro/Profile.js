@@ -7,7 +7,6 @@ import Http, { MakeRequest } from "../../components/Http";
 import { Experience, LocalTime, Wareki } from "../../utils/Calendar";
 
 export default function Profile({ lang }) {
-
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
 
@@ -20,7 +19,7 @@ export default function Profile({ lang }) {
       }
     })
     .finally(() => setLoading(false))
-  }, [])
+  }, [lang])
 
   // Init the layout
   let ItemList
