@@ -3,34 +3,37 @@ import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
 import { ActivityIndicator } from 'react-native';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import Http, { MakeRequest } from '../../components/Http';
-import '../../utils/i18n';
 import Profile from './Profile';
 import Contact from './Contact';
 import BaseComponent from '../../components/BaseComponent';
 
 class Intro extends BaseComponent {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
+    this.fetchContent()
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps) {
+    if (prevProps.lang === this.props.lang) return
+    this.fetchContent()
+  }
+
+  fetchContent() {
+    this.setState({ isLoading: true })
     const request = MakeRequest()
-    Http(`basic?lang=${encodeURIComponent(this.state.lang)}`, request)
+    Http(`basic?lang=${encodeURIComponent(this.props.lang)}`, request)
     .then((res) => {
       if (res !== undefined) {
         this.setState({ data: res })
       }
     })
     .finally(() => {
-      this.setState({ 
-        isLoading: false, 
-        lang: this.state.lang 
-      })
+      this.setState({ isLoading: false })
     })
   }
 
   render() {
-    const { data, isLoading, lang } = this.state
+    const { data, isLoading } = this.state
+    const { lang } = this.props
 
     let colLeft
 
@@ -60,7 +63,7 @@ class Intro extends BaseComponent {
               variant='warning'>{data['status']}: 
               {data['msg']}</Alert>
             { isLoading ? <ActivityIndicator/> : colLeft }
-            <Profile/>
+            <Profile lang={lang} />
         </Row>
       </Container>
     )

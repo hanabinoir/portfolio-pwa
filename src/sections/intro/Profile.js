@@ -5,15 +5,13 @@ import { Translation } from 'react-i18next';
 import { ActivityIndicator } from "react-native";
 import Http, { MakeRequest } from "../../components/Http";
 import { Experience, LocalTime, Wareki } from "../../utils/Calendar";
-import { GetLanguage } from '../../utils/i18n';
 
-export default function Profile(lng) {
-
+export default function Profile({ lang }) {
   const [isLoading, setLoading] = useState(true)
   const [data, setData] = useState([])
-  const lang = lng ?? GetLanguage()
 
   useEffect(() => {
+    setLoading(true)
     const request = MakeRequest()
     Http(`profile?lang=${encodeURIComponent(lang)}`, request)
     .then((res) => {
@@ -22,7 +20,7 @@ export default function Profile(lng) {
       }
     })
     .finally(() => setLoading(false))
-  }, [])
+  }, [lang])
 
   // Init the layout
   let ItemList
