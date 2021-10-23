@@ -44,6 +44,10 @@
   margin-right: 3px;
 }
 
+.contact-icons > svg:hover {
+  cursor: pointer;
+}
+
 .badge {
   color: black;
   border: none;

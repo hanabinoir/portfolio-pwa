@@ -15,9 +15,9 @@ export default function App() {
   const [lang, setLang] = useState(GetLanguage())
 
   const toggleLang = () => {
-    const newLang = lang === 'jp' ? 'en' : 'jp'
-    i18n.changeLanguage(newLang)
-    setLang(newLang)
+    const targetLang = lang === 'jp' ? 'en' : 'jp'
+    i18n.changeLanguage(targetLang)
+    setLang(targetLang)
   }
 
   const section = (item) => {

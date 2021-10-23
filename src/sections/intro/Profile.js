@@ -50,7 +50,7 @@ export default function Profile({ lang }) {
   // Address
   const address = data.address
   let strAddress, transit, stationAccess, strBirth, validity
-  const addressParts = [address.town, address.ward, address.city, address.prefecture, address.country]
+  const addressParts = [address.city, address.prefecture, address.country]
   transit = `${data['transit'].line} ${data['transit'].station}`
   // Birthday, Identity
   const birth = new Date(data['birth'])
@@ -112,7 +112,7 @@ export default function Profile({ lang }) {
   const items = [
     { name: "address", val: `〒${address['postal_code']} ${strAddress}` }, 
     { name: "transit", val: `${transit} ${stationAccess}`}, 
-    { name: "birth", val: `${strBirth} ${Wareki(birth, lang)}` }, 
+    { name: "birth", val: `${strBirth} (${Wareki(birth, lang)})` }, 
     { name: "identity", val: idStatus }, 
     { name: "experience", val: Experience(data['experience'], lang) }, 
     { name: "intro", val: txtIntro}

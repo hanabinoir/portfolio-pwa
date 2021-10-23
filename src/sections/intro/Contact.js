@@ -30,10 +30,12 @@ export default function Contact() {
   function openExternal(url) {
     const isEmailAddr = validator.isEmail(url)
     const lblOK = isEmailAddr ? "Send" : "Open"
+    const briefHost = "cloudinary://"
+    const msg = url.includes(briefHost) ? "Cloudinary File" : url
 
     confirmAlert({
       title: "Warning: Opening External Link",
-      message: url,
+      message: msg,
       buttons: [
         {
           label: "Cancel",
@@ -44,7 +46,11 @@ export default function Contact() {
             if (isEmailAddr) {
               url = `mailto:${url}`
             }
-            Linking.openURL(url)
+            if (url.includes(briefHost)) {
+              const host = "https://res.cloudinary.com/hanabinoir/"
+              url = url.replace(briefHost, host)
+            }
+            window.open(url, '_blank')
           }
         }, 
       ],
@@ -67,10 +73,16 @@ export default function Contact() {
     files = (
       <div className="contact-icons">
         <TiMail/><a href="#" onClick={ () => { openExternal(data['email'])} }>{data['email']}</a><br/>
-        <IoDocumentOutline/>CV: <FaFileWord/>/<FaFilePdf/><br/>
-        <IoDocumentOutline/>履歴書: <FaFileExcel/>/<FaFilePdf/><br/>
-        <IoDocumentOutline/>職務経歴書: <FaFileWord/>/<FaFilePdf/><br/>
-        <TiContacts/>Contact Me
+        <IoDocumentOutline/>CV: 
+          <FaFileWord onClick={ () => { openExternal(data['resume_en_docx']) } }/>/
+          <FaFilePdf onClick={ () => { openExternal(data['resume_en_pdf']) } }/><br/>
+        <IoDocumentOutline/>履歴書: 
+          <FaFileExcel onClick={ () => { openExternal(data['resume_jp_docx']) } }/>/
+          <FaFilePdf onClick={ () => { openExternal(data['resume_jp_pdf']) } }/><br/>
+        <IoDocumentOutline/>職務経歴書: 
+          <FaFileWord onClick={ () => { openExternal(data['cv_jp_docx']) } }/>/
+          <FaFilePdf onClick={ () => { openExternal(data['cv_jp_pdf']) } }/><br/>
+        {/* <TiContacts/>Contact Me */}
       </div>
     )
   }
