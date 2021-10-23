@@ -1,23 +1,23 @@
 {
   "files": {
-    "app.js": "/portfolio-web/static/js/app.e665cec4.chunk.js",
-    "app.js.map": "/portfolio-web/static/js/app.e665cec4.chunk.js.map",
-    "runtime~app.js": "/portfolio-web/static/js/runtime~app.2a830c56.js",
-    "runtime~app.js.map": "/portfolio-web/static/js/runtime~app.2a830c56.js.map",
-    "static/js/2.7274a1fb.chunk.js": "/portfolio-web/static/js/2.7274a1fb.chunk.js",
-    "static/js/2.7274a1fb.chunk.js.map": "/portfolio-web/static/js/2.7274a1fb.chunk.js.map",
-    "favicon-16.png": "/portfolio-web/favicon-16.png",
-    "favicon-32.png": "/portfolio-web/favicon-32.png",
-    "favicon.ico": "/portfolio-web/favicon.ico",
-    "index.html": "/portfolio-web/index.html",
-    "manifest.json": "/portfolio-web/manifest.json",
-    "serve.json": "/portfolio-web/serve.json",
-    "static/js/2.7274a1fb.chunk.js.LICENSE.txt": "/portfolio-web/static/js/2.7274a1fb.chunk.js.LICENSE.txt",
-    "static/media/avatar_160x160.jpg": "/portfolio-web/static/media/avatar_160x160.061b615c.jpg"
+    "app.js": "/static/js/app.b0247afa.chunk.js",
+    "app.js.map": "/static/js/app.b0247afa.chunk.js.map",
+    "runtime~app.js": "/static/js/runtime~app.2e9f1821.js",
+    "runtime~app.js.map": "/static/js/runtime~app.2e9f1821.js.map",
+    "static/js/2.d7eb5ca3.chunk.js": "/static/js/2.d7eb5ca3.chunk.js",
+    "static/js/2.d7eb5ca3.chunk.js.map": "/static/js/2.d7eb5ca3.chunk.js.map",
+    "favicon-16.png": "/favicon-16.png",
+    "favicon-32.png": "/favicon-32.png",
+    "favicon.ico": "/favicon.ico",
+    "index.html": "/index.html",
+    "manifest.json": "/manifest.json",
+    "serve.json": "/serve.json",
+    "static/js/2.d7eb5ca3.chunk.js.LICENSE.txt": "/static/js/2.d7eb5ca3.chunk.js.LICENSE.txt",
+    "static/media/avatar_160x160.jpg": "/static/media/avatar_160x160.061b615c.jpg"
   },
   "entrypoints": [
-    "static/js/runtime~app.2a830c56.js",
-    "static/js/2.7274a1fb.chunk.js",
-    "static/js/app.e665cec4.chunk.js"
+    "static/js/runtime~app.2e9f1821.js",
+    "static/js/2.d7eb5ca3.chunk.js",
+    "static/js/app.b0247afa.chunk.js"
   ]
 }
