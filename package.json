@@ -1,5 +1,5 @@
 {
-  "homepage": "https://hanabinoir.xyz",
+  "homepage": "https://hanabinoir.github.io",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "deploy": "gh-pages -d web-build",
